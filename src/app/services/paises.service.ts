@@ -17,7 +17,6 @@ export class PaisesService {
       this.http
         .get('https://restcountries.com/v3.1/lang/spa')
         .subscribe((paises) => {
-          console.log(paises);
           this.paises = <PaisInterface[]>paises;
           resolve(<PaisInterface[]>paises);
         });

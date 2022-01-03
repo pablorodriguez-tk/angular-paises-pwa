@@ -18,13 +18,11 @@ export class PaisComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(id);
     this.paisesService.getPaisPorId(id).then((pais) => {
       if (!pais) {
         return this.router.navigateByUrl('/');
       }
       this.pais = pais;
-      console.log(pais);
     });
   }
 }
